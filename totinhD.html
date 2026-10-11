@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Dương ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffb6c9, #ffcce0, #e6caff);
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 24px;
+            animation: bay 8s linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @keyframes bay {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% { opacity: 0.8; }
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .card {
+            width: 90%;
+            max-width: 430px;
+            padding: 35px 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.88);
+            border-radius: 25px;
+            box-shadow: 0 12px 40px rgba(200, 70, 130, 0.2);
+            position: relative;
+            z-index: 2;
+            animation: hienlen 1s ease;
+        }
+
+        @keyframes hienlen {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .big-heart {
+            font-size: 65px;
+            animation: dap 1s infinite;
+        }
+
+        @keyframes dap {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        h1 {
+            color: #ff4f87;
+            margin: 15px 0;
+            font-size: 30px;
+        }
+
+        p {
+            color: #765466;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .name {
+            color: #ff4081;
+            font-weight: bold;
+        }
+
+        button {
+            border: none;
+            padding: 13px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 7px 4px;
+            transition: 0.25s;
+        }
+
+        button:hover {
+            transform: scale(1.07);
+        }
+
+        .yes {
+            background: #ff4f87;
+            color: white;
+            box-shadow: 0 5px 15px #ffb1ca;
+        }
+
+        .think {
+            background: #ffe4ef;
+            color: #e84e83;
+        }
+
+        #message {
+            display: none;
+            margin-top: 20px;
+            color: #ff4081;
+            font-weight: bold;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .signature {
+            margin-top: 20px;
+            color: #b78aa0;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="big-heart">💗</div>
+
+        <h1>Gửi Dương 🌷</h1>
+
+        <p>
+            Có một điều tớ đã muốn nói với cậu từ lâu...<br>
+            Mỗi lần nói chuyện với cậu,<br>
+            tớ đều cảm thấy vui hơn một chút.<br><br>
+
+            Tớ không biết từ khi nào,<br>
+            <span class="name">Dương đã trở thành người đặc biệt</span>
+            trong lòng tớ.
+        </p>
+
+        <p>
+            Vì vậy hôm nay tớ muốn lấy hết can đảm<br>
+            để hỏi cậu một điều...
+        </p>
+
+        <h2 style="color:#ff4f87; margin:20px 0;">
+            Dương ơi, cậu cho tớ cơ hội<br>
+            được ở bên cậu nhé? ❤️
+        </h2>
+
+        <button class="yes" onclick="dongY()">
+            Đồng ý ❤️
+        </button>
+
+        <button class="think" onclick="suyNghi()">
+            Cho tớ suy nghĩ 💗
+        </button>
+
+        <div id="message"></div>
+
+        <div class="signature">
+            Made with ❤️ dành riêng cho Dương
+        </div>
+    </div>
+
+    <script>
+        // Tạo trái tim bay
+        const emojis = ["❤️", "💗", "💕", "💖", "🌸"];
+
+        function taoTraiTim() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerText =
+                emojis[Math.floor(Math.random() * emojis.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration =
+                (5 + Math.random() * 5) + "s";
+            heart.style.fontSize =
+                (16 + Math.random() * 22) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(taoTraiTim, 400);
+
+        // Khi Dương đồng ý
+        function dongY() {
+            const message = document.getElementById("message");
+
+            message.style.display = "block";
+            message.innerText =
+                "AAAAA! 🥹❤️\n" +
+                "Cảm ơn Dương đã cho tớ cơ hội!\n" +
+                "Tớ sẽ cố gắng để cậu luôn cảm thấy vui vẻ.\n" +
+                "Mong rằng chúng ta sẽ có thật nhiều kỷ niệm đẹp! 💕";
+
+            for (let i = 0; i < 15; i++) {
+                setTimeout(taoTraiTim, i * 100);
+            }
+        }
+
+        // Khi Dương muốn suy nghĩ
+        function suyNghi() {
+            const message = document.getElementById("message");
+
+            message.style.display = "block";
+            message.innerText =
+                "Không sao đâu, Dương cứ từ từ nhé! 🌷\n" +
+                "Tớ tôn trọng cảm xúc của cậu.\n" +
+                "Dù thế nào, tớ vẫn mong cậu luôn vui vẻ. 💗";
+        }
+    </script>
+
+</body>
+</html>
